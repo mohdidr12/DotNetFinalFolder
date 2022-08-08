@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SealedDemo", "SealedDemo.csproj", "{FC854CC4-40F4-4CE2-9F5B-3A128692D844}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC854CC4-40F4-4CE2-9F5B-3A128692D844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC854CC4-40F4-4CE2-9F5B-3A128692D844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC854CC4-40F4-4CE2-9F5B-3A128692D844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC854CC4-40F4-4CE2-9F5B-3A128692D844}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0DB09D9-F040-4727-90C4-61F57F5797D9}
+	EndGlobalSection
+EndGlobal
