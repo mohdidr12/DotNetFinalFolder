@@ -10,6 +10,7 @@ namespace HomePracticeLinq
     {
         static void Main(string[] args)
         {
+            /*
             List<int> list = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             IEnumerable<int> myLinqQuery = from obj in list
                               where obj > 2
@@ -33,30 +34,51 @@ namespace HomePracticeLinq
             Console.WriteLine("********************************************");
             List<Employee> employees = new List<Employee>()
             {
-                new Employee(){id=1,name="idris",Email="idris@gmail.com"},
-                new Employee(){id=2,name="umar",Email="umar@gmail.com"},
-                  new Employee(){id=3,name="iram",Email="iram@gmail.com"}
+                new Employee(){id=1,name="idris",Email="idris@gmail.com",Programming= new List<Techs>
+                { 
+                } },
+                new Employee(){id=2,name="umar",Email="umar@gmail.com",Programming= new List<string>(){"C","C++","JAVA","PHYTHON" }},
+                  new Employee(){id=3,name="iram",Email="iram@gmail.com",Programming= new List<string>(){"PHYTHON","JAVA","JS","MY SQL" }}
             };
+            var methodSyntax7 = employees.SelectMany(emp => emp.Programming).ToList();
+            var QuerySyntax8 = (from emp in employees
+                               from skill in emp.Programming
+                               select skill).ToList();
+
+            foreach(var emp in QuerySyntax8)
+            {
+                Console.WriteLine("Pr"+emp);
+            }
+
             var query5 = (from emp in employees
                           select new Employee()
                           {
                               id = emp.id,
                              Email = emp.Email
                           }).ToList();
-            foreach (Employee e in query5)
+
+            var queryMethod3 = employees.Select(emp => new Student()
+                {
+                  stEmail = emp.Email,
+                  stName = emp.name,
+                  StId = emp.id
+                  }
+            );
+            foreach(var  e in queryMethod3)
             {
-                Console.WriteLine(e.id + " ," + e.name+" ,"+e.Email);
+                Console.WriteLine(e.stEmail + " ," + e.stName+" ,"+e.StId);
             }
 
             var query6 = (from emp in employees
-                          select new Student()
+                          select new 
                           {
-                              StId = emp.id,
-                              stEmail = emp.Email
+                              CustomId = emp.id,
+                              CustomEmail = emp.Email,
+                              CustomName = emp.name
                           }).ToList();
             foreach (var obj in query6)
             {
-                Console.WriteLine(obj.StId + " ," + obj.stName + " ," + obj.stEmail);
+                Console.WriteLine(obj.CustomId + " ," + obj.CustomName + " ," + obj.CustomEmail);
             }
 
 
@@ -79,17 +101,112 @@ namespace HomePracticeLinq
             //{
             //    Console.WriteLine(e.id + " " + e.name);
             //}
+            List<string> strList = new List<string>() { "Nitish", "Kaushik" };
+            var queryResult1 = strList.SelectMany(x => x).ToList();
+            var queryResult = (from rec in strList
+                               from ch in rec
+                               select ch).ToList();
+            
+
+            Console.ReadLine();
+
+             */
+
+            // OfType Demo
+
+            //var dataSource = new  List<object>(){ "Ada","John","haris",1,2,3,4,5};
+            //var methodSyntax = dataSource.OfType<string>().Where(x => x.Length>3).ToList();
+            //var querySyntax = (from e in dataSource
+            //                   where e is int 
+            //                   select e).ToList();
+
+            //    int[] arr = new int[]{ 1, 45, 32, 78, 90, 345, 678 };
+
+            //Reverse Demo
+
+       //     List<int> lList = new List<int>() { 1, 43, 23, 56, 78, 3334, 8999 };
+       //     foreach (int i in lList)
+       //     {
+       //         Console.WriteLine(i);
+       //     }
+       //     Console.WriteLine("=============================================");
+       ////   var em =   lList.AsEnumerable().Reverse();
+       //     foreach(int i in lList)
+       //     {
+       //         Console.WriteLine(i);
+       //     }
+           Console.ReadLine();
 
 
+            //All Any and Contains
+
+            //var dataSource = new List<Employee>()
+            //{
+            //    new Employee{id=1,Marks=40},
+            //    new Employee{id=1,Marks=100},
+            //    new Employee{id=1,Marks=85},
+            //    new Employee{id=1,Marks=20},
+            //    new Employee{id=1,Marks=35}
+            //};
+            //var ms = dataSource.Any(emp => emp.Marks > 85);
+
+            //var qs = (from emp in dataSource
+            //          select emp).Any(emp => emp.Marks > 100);
+            //List<string> lList = new List<string> { "babu", "mono", "jaanu", "kaalu" };
+            //var ms = lList.AsEnumerable().Contains("kaalu");
+            //var qs = (from str in lList
+            //          select str).Contains("nanu");
+            //    List<int> llist = new List<int> { 1, 2, 1, 2, 3, 2, 1, 2, 3, 4, 5, 6 };
+
+            // Except 
+
+            //var datasource = new List<Employee>()
+            //{
+            //    new Employee{id=1,Firstname="idris"},
+            //    new Employee{id=2,Firstname="juned"},
+            //    new Employee{id=3,Firstname="kallu"},
+            //};
+            //var datasource1 = new List<Employee>()
+            //{
+            //    new Employee{id=1,Firstname="idris"},
+            //    new Employee{id=2,Firstname="juned"},
+            //    new Employee{id=4,Firstname="manu"},
+            //};
+
+            //List<string> lList = new List<string> { "A", "B", "C", "D" };
+            //List<string> lList1 = new List<string> { "A", "B", "E", "F" };
+
+         //   var result = lList.Union(lList1).ToList();
+         ////  var ms = datasource.Select(x => x.Firstname).Intersect(datasource1.Select(x => x.Firstname)).ToList();
+         //   foreach(var i in result)
+         //   {
+         //       Console.WriteLine(i);
+         //   }
 
 
+            //  Console.WriteLine(ms);
+            //Console.WriteLine(qs);
 
+            Console.ReadLine();
         }
         class Employee
         {
             public int id { get; set; }
-            public string name { get; set; }
-            public string Email { get; set; }
+          public string name { get; set; }
+            public string address { get; set; }
+         //   public string Lastname { get; set; }
+         //   public string Email { get; set; }
+           //   public int Marks { get; set; }
+           // public List<Techs> Programming { get; set; }
+
+           // public List<string> Programming { get; set; }
         }
+        class Department
+        {
+            public int id { get; set; }
+            public string department { get; set; }
+
+        }
+        
     }
 }
