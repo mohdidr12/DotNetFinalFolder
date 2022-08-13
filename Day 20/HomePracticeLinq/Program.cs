@@ -124,18 +124,18 @@ namespace HomePracticeLinq
 
             //Reverse Demo
 
-       //     List<int> lList = new List<int>() { 1, 43, 23, 56, 78, 3334, 8999 };
-       //     foreach (int i in lList)
-       //     {
-       //         Console.WriteLine(i);
-       //     }
-       //     Console.WriteLine("=============================================");
-       ////   var em =   lList.AsEnumerable().Reverse();
-       //     foreach(int i in lList)
-       //     {
-       //         Console.WriteLine(i);
-       //     }
-           Console.ReadLine();
+            //     List<int> lList = new List<int>() { 1, 43, 23, 56, 78, 3334, 8999 };
+            //     foreach (int i in lList)
+            //     {
+            //         Console.WriteLine(i);
+            //     }
+            //     Console.WriteLine("=============================================");
+            ////   var em =   lList.AsEnumerable().Reverse();
+            //     foreach(int i in lList)
+            //     {
+            //         Console.WriteLine(i);
+            //     }
+            Console.ReadLine();
 
 
             //All Any and Contains
@@ -176,37 +176,63 @@ namespace HomePracticeLinq
             //List<string> lList = new List<string> { "A", "B", "C", "D" };
             //List<string> lList1 = new List<string> { "A", "B", "E", "F" };
 
-         //   var result = lList.Union(lList1).ToList();
-         ////  var ms = datasource.Select(x => x.Firstname).Intersect(datasource1.Select(x => x.Firstname)).ToList();
-         //   foreach(var i in result)
-         //   {
-         //       Console.WriteLine(i);
-         //   }
+            //   var result = lList.Union(lList1).ToList();
+            ////  var ms = datasource.Select(x => x.Firstname).Intersect(datasource1.Select(x => x.Firstname)).ToList();
+            //   foreach(var i in result)
+            //   {
+            //       Console.WriteLine(i);
+            //   }
 
 
             //  Console.WriteLine(ms);
             //Console.WriteLine(qs);
+            var dataSource = new List<Employee>()
+            {
+            new Employee(){id=1,name="idris",address="jaipur"},
+            new Employee() { id = 2, name = "Juned", address = "Ajmer" },
+            new Employee() { id = 3, name = "Jaanvi", address = "Kota" },
+            new Employee() { id = 4, name = "Aamir", address = "Jabalpur" }
+            };
+            var dataSource1 = new List<Department>()
+            {
+                 new Department(){id=1,departmentName="IT"},
+                 new Department(){id=2,departmentName="Finance"},
+                 new Department(){id=3,departmentName="IT"},
+                 new Department() { id = 4, departmentName = "Finance" }
 
-            Console.ReadLine();
-        }
+            };
+
+            var qs = (from emp in dataSource
+                      join dept in dataSource1
+                      on -emp.id equals dept.id
+                      select new
+                      {
+                          empName = emp.name,
+                          deptName = dept.departmentName
+                      }).ToList();
+           
+
+            foreach (var em in qs)
+            {
+                Console.WriteLine("EmpName " + em.empName + "Department Name " + em.deptName);
+              
+            }
+
+         }
+    }
         class Employee
         {
             public int id { get; set; }
           public string name { get; set; }
             public string address { get; set; }
-         //   public string Lastname { get; set; }
-         //   public string Email { get; set; }
-           //   public int Marks { get; set; }
-           // public List<Techs> Programming { get; set; }
-
-           // public List<string> Programming { get; set; }
+       
         }
         class Department
         {
             public int id { get; set; }
-            public string department { get; set; }
+            public string departmentName { get; set; }
 
         }
         
-    }
+    
 }

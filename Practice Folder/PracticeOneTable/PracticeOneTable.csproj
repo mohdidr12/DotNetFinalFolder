@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6AFA73E5-5BD7-4194-A92C-DA7BF32290C4}</ProjectGuid>
+    <ProjectGuid>{0ABAAD03-D2C7-42F4-A173-9D80B0492D70}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HomePracticeLinq</RootNamespace>
-    <AssemblyName>HomePracticeLinq</AssemblyName>
+    <RootNamespace>PracticeOneTable</RootNamespace>
+    <AssemblyName>PracticeOneTable</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IStudentServiceSql.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlConnectionClass.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentServiceIOSql.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6AFA73E5-5BD7-4194-A92C-DA7BF32290C4}</ProjectGuid>
+    <ProjectGuid>{88B9DE3C-E83C-422C-A827-CFEC44BC86E2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>HomePracticeLinq</RootNamespace>
-    <AssemblyName>HomePracticeLinq</AssemblyName>
+    <RootNamespace>LayeredDemo</RootNamespace>
+    <AssemblyName>LayeredDemo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
