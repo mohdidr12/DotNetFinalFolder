@@ -60,6 +60,7 @@ namespace TaskOnSQLConnections
                 int n = cmd.ExecuteNonQuery();
                 if (n > 0)
                 {
+                    Console.WriteLine(n + " rows inserted");
                     return true;
                 }
                 else
@@ -94,6 +95,7 @@ namespace TaskOnSQLConnections
                 int n = cmd.ExecuteNonQuery();
                 if (n > 0)
                 {
+                    Console.WriteLine(n + "rows updated");
                     return true;
                 }
                 else
@@ -128,6 +130,7 @@ namespace TaskOnSQLConnections
                 int n = cmd.ExecuteNonQuery();
                 if (n > 0)
                 {
+                    Console.WriteLine(n + "rows updated");
                     return true;
                 }
                 else
@@ -162,6 +165,7 @@ namespace TaskOnSQLConnections
                 int n = cmd.ExecuteNonQuery();
                 if (n > 0)
                 {
+                    Console.WriteLine(n + "rows deleted");
                     return true;
                 }
                 else

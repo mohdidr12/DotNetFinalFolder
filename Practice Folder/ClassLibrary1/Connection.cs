@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Data;
 
-namespace TwoTablesPractice
+namespace LayeredPracticeTwoTable
 {
-    class ConnectionClass : IStudent,ICourse
+    public class Connection
     {
         SqlConnection conn;
-        public ConnectionClass()
+        public Connection()
         {
             conn = new SqlConnection("Server = DEL1-LHP-N82101; Database = SchoolsDb; Integrated Security = SSPI");
         }
@@ -57,7 +58,7 @@ namespace TwoTablesPractice
                 }
                 else
                 {
-                    Console.WriteLine("Student Not Found with given id and age");
+                    Console.WriteLine("Unable to Update the rows");
                 }
             }
             catch (Exception e)
@@ -87,7 +88,7 @@ namespace TwoTablesPractice
                 }
                 else
                 {
-                    Console.WriteLine("Student not found with given id and city");
+                    Console.WriteLine("Unable to Update the rows");
                 }
             }
             catch (Exception e)
@@ -117,7 +118,7 @@ namespace TwoTablesPractice
                 }
                 else
                 {
-                    Console.WriteLine("student not found with given id");
+                    Console.WriteLine("Unable to Delete the rows");
                 }
             }
             catch (Exception e)
@@ -172,7 +173,7 @@ namespace TwoTablesPractice
             }
 
         }
-        public void AddCourse(int id,int c_id,string c_name)
+        public void AddCourse(int id, int c_id, string c_name)
         {
             try
             {
@@ -201,7 +202,7 @@ namespace TwoTablesPractice
                 }
             }
         }
-        public void UpdateCourse(int c_id,string c_name)
+        public void UpdateCourse(int c_id, string c_name)
         {
             try
             {
@@ -215,7 +216,7 @@ namespace TwoTablesPractice
                 }
                 else
                 {
-                    Console.WriteLine("Course not found with given c id");
+                    Console.WriteLine("Unable to Update the rows");
                 }
             }
             catch (Exception e)
@@ -244,7 +245,7 @@ namespace TwoTablesPractice
                 }
                 else
                 {
-                    Console.WriteLine("Course not found with given c id");
+                    Console.WriteLine("Unable to Delete the rows");
                 }
             }
             catch (Exception e)
@@ -344,23 +345,23 @@ namespace TwoTablesPractice
                 string str = "Select count(*) from StudentDemo";
                 SqlCommand cmd = new SqlCommand(str, conn);
                 int count = (int)cmd.ExecuteScalar();
-                if(count>0)
+                if (count > 0)
                 {
-                    Console.WriteLine("Total No of Students "+ count);
+                    Console.WriteLine("Total No of Students " + count);
                 }
                 else
                 {
                     Console.WriteLine("No Students here to Display . Please Add Some");
                 }
-                
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
             finally
             {
-                if(conn!=null)
+                if (conn != null)
                 {
                     conn.Close();
                 }
@@ -376,7 +377,7 @@ namespace TwoTablesPractice
                 int count = (int)cmd.ExecuteScalar();
                 if (count > 0)
                 {
-                    Console.WriteLine("Total Courses are "+count);
+                    Console.WriteLine("Total Courses are " + count);
                 }
                 else
                 {
@@ -396,7 +397,5 @@ namespace TwoTablesPractice
                 }
             }
         }
-     }
+    }
 }
-      
-
