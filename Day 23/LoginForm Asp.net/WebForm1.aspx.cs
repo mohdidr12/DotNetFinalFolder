@@ -42,6 +42,13 @@ namespace LoginForm
             {
                 Console.WriteLine(ex.Message);
             }
+            finally
+            {
+                if(con!=null)
+                {
+                    con.Close();
+                }
+            }
         }
     }
 }
