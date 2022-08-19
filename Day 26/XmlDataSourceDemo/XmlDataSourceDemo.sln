@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlDataSourceDemo", "XmlDataSourceDemo.csproj", "{6EA2F3FC-89AA-4FD2-BD24-2C86EB5F401C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EA2F3FC-89AA-4FD2-BD24-2C86EB5F401C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EA2F3FC-89AA-4FD2-BD24-2C86EB5F401C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EA2F3FC-89AA-4FD2-BD24-2C86EB5F401C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EA2F3FC-89AA-4FD2-BD24-2C86EB5F401C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {211ED85C-1571-42B4-825E-E83FA9424371}
+	EndGlobalSection
+EndGlobal
