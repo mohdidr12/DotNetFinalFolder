@@ -9,9 +9,25 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
-        </div>
-        <asp:ListBox ID="ListBox2" runat="server"></asp:ListBox>
+            <asp:ListBox ID="ListBox1" runat="server">
+                <asp:ListItem>Bombay</asp:ListItem>
+                <asp:ListItem>Goa</asp:ListItem>
+            </asp:ListBox>
+            <br />
+            <br />
+            Choose&nbsp; City<br />
+            <br />
+            </div>
+        <asp:ListBox ID="ListBox2" runat="server">
+            <asp:ListItem>Maharahtra</asp:ListItem>
+            <asp:ListItem>Gujarat</asp:ListItem>
+        </asp:ListBox>
+        <br />
+        <p>
+            Choose State</p>
+        <p>
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Merge" />
+        </p>
     </form>
 </body>
 </html>

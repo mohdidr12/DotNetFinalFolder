@@ -11,20 +11,25 @@ namespace _2nd_6_Assessment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
             var item1 = from ListItem li in ListBox1.Items
-                           where li.Selected == true
-                           select li.Text;
+                        where li.Selected == true
+                        select li.Text;
             var item2 = from ListItem lii in ListBox2.Items
                         where lii.Selected == true
                         select lii.Text;
 
             var result = item1.Union(item2).ToList();
-            foreach(var sel in result)
+            foreach (var sel in result)
             {
                 Response.Write(sel.ToString() + "</br>");
             }
-
-
         }
     }
 }
