@@ -45,7 +45,7 @@
             <asp:Button ID="btn_delete" runat="server" OnClick="btn_delete_Click" Text="DeleteBookById" />
 &nbsp;
         </p>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="True" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
             <Columns>
                 <asp:BoundField DataField="BookId" HeaderText="BookId" SortExpression="BookId" />
                 <asp:BoundField DataField="BookName" HeaderText="BookName" SortExpression="BookName" />
