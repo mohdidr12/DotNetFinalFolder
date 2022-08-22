@@ -10,48 +10,50 @@ namespace BAL
     public class BusinessAccessClass
     {
         DataAccessClass ds = new DataAccessClass();
-        public void InsertFun(int bookid,string bookname,string author,string publisher,double price)
+        public bool InsertFun(int bookid,string bookname,string author,string publisher,double price)
         {
             if(ds.Insert( bookid,bookname,author,publisher,price))
             {
-                Console.WriteLine("books Details Added Sucesfully");
+                return true;
             }
             else
             {
-                Console.WriteLine("books Details Not  Added Sucesfully");
+                return false;
             }
         }
-        public void GetBooksFun()
-        { 
-            if(ds.GetAllBooks())
-            {
-                Console.WriteLine("books Are Shown below");
-            }
-            else
-            {
-                Console.WriteLine("Unable to shown the books ");
-            }
+        public object GetBooksFun()
+        {
+            //if(ds.GetAllBooks())
+            //{
+            //    return 
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+          var sel =   ds.GetAllBooks();
+            return sel;
         }
-        public void DeleteBookFun(int bid)
+        public bool DeleteBookFun(int bid)
         {
             if(ds.DeleteBooks(bid))
             {
-                Console.WriteLine("books deleted Successfully");
+                return true;
             }
             else
             {
-                Console.WriteLine("books deleted UnSuccessfully");
+                return false;
             }
         }
-        public void UpdateFun(int bid,string bookname,double price)
+        public bool UpdateFun(int bid,string bname)
         {
-            if (ds.UpdateBook(bid,bookname,price))
+            if (ds.UpdateBook(bid,bname))
             {
-                Console.WriteLine("books Updated Successfully");
+                return true;
             }
             else
             {
-                Console.WriteLine("books Not Updated Successfully");
+                return false;
             }
 
         }

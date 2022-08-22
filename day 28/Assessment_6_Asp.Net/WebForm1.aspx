@@ -45,14 +45,7 @@
             <asp:Button ID="btn_delete" runat="server" OnClick="btn_delete_Click" Text="DeleteBookById" />
 &nbsp;
         </p>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
-            <Columns>
-                <asp:BoundField DataField="BookId" HeaderText="BookId" SortExpression="BookId" />
-                <asp:BoundField DataField="BookName" HeaderText="BookName" SortExpression="BookName" />
-                <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
-                <asp:BoundField DataField="Publisher" HeaderText="Publisher" SortExpression="Publisher" />
-                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-            </Columns>
+        <asp:GridView ID="GridView1" runat="server">
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:demo_1ConnectionString %>" SelectCommand="SELECT [BookId], [BookName], [Author], [Publisher], [Price] FROM [BookDetails]"></asp:SqlDataSource>
     </form>

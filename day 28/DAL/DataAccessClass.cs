@@ -32,34 +32,25 @@ namespace DAL
                 return true;
 
             }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return false;
-            }
+           
             finally
                 {
                 conn.Close();
                 }
         }
-        public bool GetAllBooks()
+        public DataTable GetAllBooks()
         {
             try
             {
                 conn.Open();
                 SqlDataAdapter da = new SqlDataAdapter("GetBooks", conn);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-               
-                DataTable dt = new DataTable();
+                DataSet dt = new DataSet();
                 da.Fill(dt);
-                return true;
+                return dt.Tables[0];
 
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return false;
-            }
+          
             finally
             {
                 conn.Close();
@@ -77,36 +68,27 @@ namespace DAL
                 return true;
 
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return false;
-            }
+          
             finally
             {
                 conn.Close();
             }
 
         }
-        public bool UpdateBook(int _bookid, string _bookname, double _price)
+        public bool UpdateBook(int _bookid, string _bookname)
         {
             try
             {
                 conn.Open();
-                SqlCommand da = new SqlCommand("UpdateBook", conn);
+                SqlCommand da = new SqlCommand("UpdateDemo", conn);
                 da.CommandType = CommandType.StoredProcedure;
                 da.Parameters.AddWithValue("@BookId", _bookid);
                 da.Parameters.AddWithValue("@BookName", _bookname);
-                da.Parameters.AddWithValue("@Price", _price);
                 da.ExecuteNonQuery();
                 return true;
 
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return false;
-            }
+           
             finally
             {
                 conn.Close();
