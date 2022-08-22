@@ -36,5 +36,13 @@ Create Procedure UpdateBook
 @Price As decimal(18,2)
 As
 Begin
-Update BookDetails Set BookName = '@BookName', Price = '@Price'  where BookId = @BookId
+Update BookDetails Set BookName = @BookName, Price = @Price  where BookId = @BookId
+End
+
+Create Procedure UpdateDemo
+@BookId As Int,
+@BookName As varchar(50)
+As
+Begin
+Update BookDetails Set BookName = @BookName  where BookId = @BookId
 End
