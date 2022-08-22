@@ -40,7 +40,7 @@
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDeleted="GridView1_RowDeleted">
             <Columns>
                 <asp:BoundField DataField="StudentID" HeaderText="StudentID" SortExpression="StudentID" />
                 <asp:BoundField DataField="StudentName" HeaderText="StudentName" SortExpression="StudentName" />

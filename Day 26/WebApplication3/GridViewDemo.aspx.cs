@@ -85,7 +85,9 @@ namespace WebApplication3
 
         }
 
-       
+        protected void GridView1_RowDeleted(object sender, GridViewDeletedEventArgs e)
+        {
 
         }
+    }
     }
