@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SaveData</title>
+</head>
+<body>
+    <div>
+        <form action="/EmployeeRegistration/SaveData" method="post"
+            <table border="1" bgcolor="00FF00" height="300" width="300">
+                <tr>
+                    <td>YourName</td>
+                    <td><input type="text" name="Ename"</td>
+                </tr>
+                <tr>
+                    <td>Your Email</td>
+                    <td><input type="text" name="EmpEmail"</td>
+                </tr>
+                <tr>
+                    <td>Your Contact No</td>
+                    <td><input type="text" name="contactNo"</td>
+                </tr>
+                <tr>
+                    <td>Your City</td>
+                    <td><input type="text" name="city"</td>
+                </tr>
+                <tr>
+                    <td>Your State</td>
+                    <td><input type="text" name="state"</td>
+                </tr>
+                <tr>
+                    <td>Your Country</td>
+                    <td><input type="text" name="country"</td>
+                </tr>
+                <td colspan="2" align="center"><input type="submit" value="click to register"/></td>
+                </tr>
+        </table>
+        @ViewBag.result
+        </form>
+    </div>
+  </body>
+</html>

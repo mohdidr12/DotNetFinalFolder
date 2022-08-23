@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @{ 
+        var employee = ViewData["Employee"] as MVC_DEMO3.Models.Employee;
+    }
+    <h2>@ViewData["Header"]</h2>
+    <table>
+        <tr>
+            <td>EmployeeId</td>
+            <td>@employee.EmployeeId</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>@employee.Name</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>@employee.City</td>
+        </tr>
+        <tr>
+            <td>State</td>
+            <td>@employee.Address</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>@employee.Gender</td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td>@employee.Salary</td>
+        </tr>
+
+    </table>
+</body>
+</html>
