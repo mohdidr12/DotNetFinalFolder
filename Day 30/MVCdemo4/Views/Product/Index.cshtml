@@ -1,0 +1,13 @@
+﻿
+@model IEnumerable<MVCdemo4.Models.Product>
+    @{
+        ViewBag.Title = "Index";
+    }
+<h2>Index</h2>
+@{ 
+    Html.RenderAction("GetProducts","Product");
+}
+}
+
+
+
