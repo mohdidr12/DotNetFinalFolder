@@ -1,4 +1,5 @@
-﻿@model ModelsMVC.Models.Employee
+﻿
+@model ModelsMVC.Models.Employee
 <!DOCTYPE html>
 
 <html>
@@ -7,6 +8,40 @@
     <title>Index</title>
 </head>
 <body>
+    <div>
+        @DateTime.Now
+    </div>
+    <div>
+        @{ 
+            var a = 5;
+            var b = 6;
+            var c = a + b;
+            var colorlist = new List<string> { "Red", "Green", "Blue", "Black" };
+           
+            
+        }
+    </div>
+    <div>
+        @helper myHelper(string[] str)
+           {
+        <ul>
+            @foreach(var item in str)
+            {
+              <li>@item</li>
+            }
+        </ul>
+           }
+    </div>
+    <div>
+        <label>Example 1 - Name list</label>
+        <div>
+            @myHelper(new string[] { "Tom","Harry","John","Mark"})
+        </div>
+    </div>
+   
+    <label>@c</label>
+    <label>@colorlist.FirstOrDefault()</label>
+    <label>My twitter handle is - @@mohdidris</label>
     <table>
         <tbody>
             <tr>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<twoTablesProductCategory.Models.Category>
+
+@{
+    ViewBag.Title = "CategoryIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CategoryIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New Category", "InsertCategory")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    @Html.ActionLink("Create New Product", "InsertProduct")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CategoryId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CategoryName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "UpdateCategory", new { id = item.CategoryId }) |
+        @Html.ActionLink("Details", "DetailsCategory", new { id = item.CategoryId }) |
+        @Html.ActionLink("Delete", "DeleteCategory", new { id = item.CategoryId })
+    </td>
+</tr>
+}
+
+</table>

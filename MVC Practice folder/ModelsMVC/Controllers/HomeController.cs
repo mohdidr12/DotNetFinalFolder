@@ -12,17 +12,22 @@ namespace ModelsMVC.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var data = GetEmployee();
-            return View(data);
+            //var data = GetEmployee();
+            //return View(data);
+            return View();
         }
-        public Employee GetEmployee()
+        //public Employee GetEmployee()
+        //{
+        //   return new Employee()
+        //    {
+        //        Id=1,
+        //        Name="idris",
+        //        Address="Jaipur"
+        //    };
+        //}
+        public ActionResult AboutUs()
         {
-           return new Employee()
-            {
-                Id=1,
-                Name="idris",
-                Address="Jaipur"
-            };
+            return View();
         }
     }
 }

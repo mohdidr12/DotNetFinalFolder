@@ -1,0 +1,43 @@
+﻿@model twoTablesProductCategory.Models.Product
+
+@{
+    ViewBag.Title = "DetailsProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DetailsProducts</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "UpdateProduct", new { id = Model.ProductId }) |
+    @Html.ActionLink("Back to List", "ProductIndex")
+</p>
