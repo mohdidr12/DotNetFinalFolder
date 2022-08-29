@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
-
-namespace CategoryProductCodeFirstTask.Models
+namespace PracticeCategoryProductEF.Models
 {
     public class Product
     {
         [Key]
         public int ProductId { get; set; }
-        [Required(ErrorMessage ="Product Name is Mandatory")]
+        [Required(ErrorMessage = "Product Name is Mandatory")]
         [StringLength(40, ErrorMessage = "cannot accept more than 40 alphabets")]
         [RegularExpression("^[a-zA-Zs]+$", ErrorMessage = "Invalid Name")]
         [MinLength(3, ErrorMessage = "Name should contain atleast 3 characters")]
