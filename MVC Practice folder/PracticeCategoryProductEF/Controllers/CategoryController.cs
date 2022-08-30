@@ -57,7 +57,10 @@ namespace PracticeCategoryProductEF.Controllers
         {
             if (ModelState.IsValid == true)
             {
-                db.Entry(c).State = EntityState.Modified;
+                //    db.Entry(c).State = EntityState.Modified;
+                Category categorytoUpdate = db.categories.FirstOrDefault(x => x.CategoryId == c.CategoryId);
+                categorytoUpdate.CategoryName = c.CategoryName;
+                
                 int n = db.SaveChanges();
                 if (n > 0)
                 {
@@ -72,37 +75,30 @@ namespace PracticeCategoryProductEF.Controllers
             }
             return View();
         }
-        public ActionResult Delete(int?id)
+       
+        public ActionResult Delete(int id)
         {
-            if (id == null)
+            var categoryRow = db.categories.Where(model => model.CategoryId == id).FirstOrDefault();
+            if(categoryRow!=null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Category category = db.categories.Find(id);
-            if (category == null)
-            {
-                return HttpNotFound();
-            }
-            return View(category);
-        }
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
+                Category categoryDelete = db.categories.FirstOrDefault(x => x.CategoryId == categoryRow.CategoryId);
+                db.categories.Remove(categoryDelete);
 
-            Category category = db.categories.Find(id);
-            db.categories.Remove(category);
-           int n = db.SaveChanges();
-            if(n>0)
-            {
-                TempData["DeleteMessage"] = "The Data is Deleted Successfully";
-            }
-            else
-            {
-                TempData["DeleteMessage"] = "The Data is Not  Deleted";
+                int n = db.SaveChanges();
+                if (n > 0)
+                {
+                    TempData["DeleteMessage"] = "The Data is Deleted Successfully";
+
+                }
+                else
+                {
+                    TempData["DeleteMessage"] = "The Data is Not  Deleted";
+                }
+
             }
             return RedirectToAction("Index");
         }
+       
         public ActionResult Details(int id)
         {
             var RowDetails = db.categories.Where(model => model.CategoryId == id).FirstOrDefault();

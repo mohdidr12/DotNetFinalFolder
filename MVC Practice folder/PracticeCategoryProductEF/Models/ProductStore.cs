@@ -10,5 +10,14 @@ namespace PracticeCategoryProductEF.Models
     {
         public DbSet<Category> categories { get; set; }
         public DbSet<Product> products { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().MapToStoredProcedures();
+            modelBuilder.Entity<Product>().MapToStoredProcedures();
+            
+            base.OnModelCreating(modelBuilder);
+        }
+     
     }
+    
 }

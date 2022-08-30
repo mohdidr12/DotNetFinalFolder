@@ -56,7 +56,10 @@ namespace PracticeCategoryProductEF.Controllers
         {
             if (ModelState.IsValid == true)
             {
-                db.Entry(p).State = EntityState.Modified;
+                //     db.Entry(p).State = EntityState.Modified;
+                Product producttoUpdate = db.products.FirstOrDefault(x => x.ProductId == p.ProductId);
+                producttoUpdate.ProductName = p.ProductName;
+                producttoUpdate.Price = p.Price;
                 int n = db.SaveChanges();
                 if (n > 0)
                 {
@@ -71,38 +74,30 @@ namespace PracticeCategoryProductEF.Controllers
             }
             return View();
         }
-        public ActionResult Delete(int?id)
-        {
-
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Product product = db.products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
-        }
-       
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
-            Product product = db.products.Find(id);
-            db.products.Remove(product);
-            int n = db.SaveChanges();
-            if(n>0)
+            var productRow = db.products.Where(model => model.ProductId == id).FirstOrDefault();
+            if(productRow!=null)
             {
-                TempData["DeleteMessage"] = "The Data is Deleted Successfully";
+
+                Product productdelete = db.products.FirstOrDefault(x => x.ProductId == productRow.ProductId);
+                db.products.Remove(productdelete);
+                int n = db.SaveChanges();
+                if (n > 0)
+                {
+                    TempData["DeleteMessage"] = "The Data is Deleted Successfully";
+
+                }
+                else
+                {
+                    TempData["DeleteMessage"] = "The Data is Not  Deleted";
+                }
             }
-            else
-            {
-                TempData["DeleteMessage"] = "The Data is Not  Deleted";
-            }
+
             return RedirectToAction("Index");
         }
+       
+       
         public ActionResult Details(int id)
         {
             var RowDetails = db.products.Where(model => model.ProductId == id).FirstOrDefault();
