@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RajDeepSinghApi", "RajDeepSinghApi.csproj", "{C8DC7AFA-BE3E-46C8-9ECE-917B88814AE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RajDeepMvc", "..\RajDeepMvc\RajDeepMvc.csproj", "{FC1C2EB3-6866-4C1F-8057-4A573E1F433E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8DC7AFA-BE3E-46C8-9ECE-917B88814AE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8DC7AFA-BE3E-46C8-9ECE-917B88814AE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8DC7AFA-BE3E-46C8-9ECE-917B88814AE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8DC7AFA-BE3E-46C8-9ECE-917B88814AE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC1C2EB3-6866-4C1F-8057-4A573E1F433E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1C2EB3-6866-4C1F-8057-4A573E1F433E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1C2EB3-6866-4C1F-8057-4A573E1F433E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1C2EB3-6866-4C1F-8057-4A573E1F433E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {588EC6A5-37C3-40F7-800F-04C0EEB35B21}
+	EndGlobalSection
+EndGlobal

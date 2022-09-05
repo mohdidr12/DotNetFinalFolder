@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Global Logic</title>
+  <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <style>
+        .lb1{
+            height:10px;
+            width:30px;
+            border:2px solid black;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            $('#txtPassword').keyup(function () {
+                var txtLength = $('#txtPassword').val().length;
+                if (txtLength == 0) {
+                    $('#lb1PasswordStrength').text('Please enter password.');
+                    $('label.lb1').css('background-color', 'white');
+                }
+                else if (txtLength > 0 && txtLength < 3) {
+                    $('#lb1PasswordStrength').text('week password.');
+                    $('label.lb1').css('background-color', 'red');
+                }
+                else if (txtLength >= 3 && txtLength < 5) {
+                    $('#lb1PasswordStrength').text('Average password.');
+                    $('label.lb1').css('background-color', 'white');
+                }
+                else if (txtLength >= 5 && txtLength < 10) {
+                    $('#lb1PasswordStrength').text('Good password.');
+                    $('label.lb1').css('background-color', 'lightgreen');
+                }
+                else if (txtLength >= 10) {
+                    $('#lb1PasswordStrength').text('Good password.');
+                    $('label.lb1').css('background-color', 'green');
+                }
+            });
+        });
+        
+
+        //$(document).ready(function () {
+        //    var textBox = document.getElementById("pass1");
+        //    textBox.onkeyup = function () {
+
+        //        var textLength = textBox.value.length;
+
+        //        if (textLength > 1 && textLength < 3) {
+        //            document.getElementById('#mylabel').innerHTML
+        //                = 'Week';
+        //        }
+        //         if (textLength > 3 && textLength < 5) {
+        //            document.getElementById('#mylabel').innerHTML
+        //                = 'Good';
+        //        }
+        //        if (textLength > 5 && textLength < 10) {
+        //            document.getElementById('#mylabel').innerHTML
+        //                = 'Strong';
+        //        }
+        //         if (textLength > 10) {
+        //            document.getElementById('#mylabel').innerHTML
+        //                = 'Very Strong';
+        //        }
+
+        //        else { };
+        //    }
+        //});
+       
+            
+        
+
+
+
+
+
+       
+      //  alert('Script tag');
+      //  var result = confirm('Are you Sure?');
+      //  alert(result);
+      //  var str = prompt();
+      //  alert(str);
+
+    </script>
+
+</head>
+<body>
+    <!--<input type="text" />
+    <input type="button" id="btnClick" value="Log In"/>
+    <input type="submit" value="Sign up" />
+    <p>Paragraph tag</p>
+    <input type="checkbox" />Yes
+    <input type="file" />-->
+    <!--<input type="button" id="btnClick" value="ClickMe!!" />
+    <label>this is a label</label>
+    <p class="ClassP">this is paragraph 1 </p>
+    <p class="ClassP">this is paragraph 2</p>-->
+    <label id="mylabel">Password:</label> &nbsp;
+    <input id="txtPassword" maxlength="15" type="text">
+    <br /> <br /> <br />
+
+    <label class="lb1">&nbsp;&nbsp;</label>
+    <label id="lb1PasswordStrength">Please enter Password</label>
+</body>
+</html>

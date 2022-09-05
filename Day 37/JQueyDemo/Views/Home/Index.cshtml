@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax(
+                {
+                    type: "GET",
+                    url: "/Home/Index/",
+                    contentType: "application/text;charset=utf-8",
+                    dataType: "text",
+                    success: function (data) {
+                        alert(1);
+                    },
+                    failure: function (data) { }
+
+
+                });
+        });
+        
+    </script>
+
+   

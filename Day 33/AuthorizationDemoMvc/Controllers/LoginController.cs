@@ -39,7 +39,20 @@ namespace AuthorizationDemoMvc.Controllers
         public bool IsValid(User u)
         {
             var credentials = db.Users.Where(model => model.username == u.username && model.password == u.password).FirstOrDefault();
-            return (u.username == credentials.username && u.password == credentials.password);
+            if (credentials != null)
+            {
+                return (u.username == credentials.username && u.password == credentials.password);
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session["username"] = null;
+            return RedirectToAction("Index", "Home");
         }
     }
 }

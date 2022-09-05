@@ -29,7 +29,8 @@ namespace PracticeCategoryProductEF.Controllers
         {
             if (ModelState.IsValid == true)
             {
-                db.categories.Add(c);
+                  db.categories.Add(c);
+               //db.Database.ExecuteSqlCommand("exec Category_Insert @CategoryName='"+c.CategoryName+"'")
                 int n = db.SaveChanges();
                 if (n > 0)
                 {

@@ -6,8 +6,10 @@ using System.Web.Mvc;
 
 namespace AuthorizationDemoMvc.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
@@ -19,7 +21,7 @@ namespace AuthorizationDemoMvc.Controllers
 
             return View();
         }
-        [Authorize]
+      
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
